@@ -1,0 +1,447 @@
+/* ============================================================
+   base
+============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  color: white;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ============================================================
+   header
+============================================================ */
+.main-title {
+  background-color: #141414;
+  padding: 16px 24px;
+  border-bottom: 3px solid #bf0d3e;
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+}
+
+/* ============================================================
+   grid layout
+============================================================ */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 20px;
+}
+
+/* ============================================================
+   cards
+============================================================ */
+.grid-item {
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  border: 1px solid #2a2a2a;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  max-height: 340px;
+}
+
+.grid-item h2 {
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 8px;
+}
+
+/* scrollable content */
+.output {
+  overflow-y: auto;
+  flex: 1;
+  margin-top: 0;
+}
+
+/* ============================================================
+   buttons and inputs
+============================================================ */
+.grid-item button {
+  background-color: #bf0d3e;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  align-self: flex-start;
+  margin-bottom: 0;
+}
+
+.grid-item button:hover {
+  background-color: #a00b34;
+}
+
+.grid-item input {
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: white;
+  padding: 7px 10px;
+  font-size: 0.85rem;
+  width: 100%;
+  outline: none;
+  margin-bottom: 0;
+  margin-right: 0;
+}
+
+.grid-item input:focus {
+  border-color: #bf0d3e;
+}
+
+.grid-item input::placeholder {
+  color: #555;
+}
+
+.grid-item select {
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: white;
+  padding: 7px 10px;
+  font-size: 0.85rem;
+  outline: none;
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   general output stuff
+============================================================ */
+.output p {
+  margin: 0.25rem 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: #ccc;
+}
+
+.output ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.output li {
+  padding: 7px 0;
+  border-bottom: 1px solid #2a2a2a;
+  font-size: 0.8rem;
+}
+
+.output li:last-child {
+  border-bottom: none;
+}
+
+.output a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.output a:hover {
+  color: white;
+}
+
+.loading {
+  color: #555;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.error {
+  color: #bf0d3e;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.no-data {
+  color: #555;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* ============================================================
+   images
+============================================================ */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 0;
+}
+
+/* ============================================================
+   mlb and nba scores
+============================================================ */
+.mlb-game {
+  padding: 7px 0;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.mlb-game:last-child {
+  border-bottom: none;
+}
+
+.mlb-game-status {
+  margin-bottom: 3px;
+}
+
+.game-status {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.game-status.final { color: #666; }
+.game-status.live { color: #4ade80; }
+.game-status.upcoming { color: #60a5fa; }
+
+.mlb-team {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 0;
+}
+
+.team-logo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  background-color: white;
+  padding: 2px;
+  border-radius: 50%;
+  margin-top: 0;
+}
+
+.team-abbrev {
+  font-size: 0.82rem;
+  font-weight: 700;
+  width: 32px;
+}
+
+.team-record {
+  font-size: 0.68rem;
+  color: #666;
+  flex: 1;
+}
+
+.team-score {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #666;
+  min-width: 18px;
+  text-align: right;
+}
+
+.team-score.winner { color: white; }
+
+.outs {
+  display: inline-flex;
+  gap: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.out-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #333;
+  display: inline-block;
+}
+
+.out-dot.active { background-color: #f59e0b; }
+
+.series-record {
+  font-size: 0.65rem;
+  color: #888;
+  font-weight: 400;
+  display: inline;
+  margin-left: 6px;
+}
+
+/* ============================================================
+   betting odds
+============================================================ */
+.odds-game {
+  padding: 8px 0;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.odds-game:last-child {
+  border-bottom: none;
+}
+
+.odds-sport {
+  font-size: 0.65rem;
+  color: #bf0d3e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.odds-team {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  padding: 2px 0;
+  color: #ccc;
+}
+
+.odds-line {
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.odds-line.plus { color: #4ade80; }
+.odds-line.minus { color: #f87171; }
+
+.live-dot {
+  color: #4ade80;
+  font-size: 0.65rem;
+  font-weight: 700;
+  margin-right: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ============================================================
+   translator
+============================================================ */
+.translation-result {
+  background-color: #2a2a2a;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 1rem;
+  color: #4ade80;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* ============================================================
+   currency converter
+============================================================ */
+.currency-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+  border-bottom: 1px solid #2a2a2a;
+  font-size: 0.82rem;
+}
+
+.currency-row:last-child { border-bottom: none; }
+
+.currency-flag { font-size: 1rem; }
+
+.currency-name {
+  color: #888;
+  width: 35px;
+}
+
+.currency-value {
+  margin-left: auto;
+  font-weight: 700;
+  color: #4ade80;
+  font-family: monospace;
+}
+
+/* ============================================================
+   weather
+============================================================ */
+.weather-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 4px;
+  text-align: center;
+}
+
+.weather-icon { font-size: 2.5rem; }
+
+.weather-temp {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.weather-condition {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.weather-details {
+  display: flex;
+  gap: 16px;
+  font-size: 0.78rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+.weather-city {
+  font-size: 0.7rem;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* ============================================================
+   bitcoin
+============================================================ */
+#bitcoin-output {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.btc-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+#btc-price {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white;
+}
+
+#btc-change {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+#btc-chart {
+  flex: 1;
+  width: 100% !important;
+}
