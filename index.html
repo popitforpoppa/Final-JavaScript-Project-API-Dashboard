@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DashConnect</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1 class="main-title">DashConnect</h1>
+  <div class="grid-container">
+    <section class="grid-item" id="sports-api">
+      <h2>🏆 Sports Headlines</h2>
+      <select id="sport-select">
+        <option value="football/nfl">NFL</option>
+        <option value="basketball/nba">NBA</option>
+        <option value="baseball/mlb">MLB</option>
+        <option value="soccer/eng.1">Soccer</option>
+        <option value="hockey/nhl">NHL</option>
+      </select>
+      <div class="output" id="sports-output"></div>
+    </section>
+
+    <section class="grid-item" id="odds-api">
+      <h2>💰 Betting Odds</h2>
+      <div class="output" id="odds-output"></div>
+    </section>
+
+    <section class="grid-item" id="mlb-api">
+      <h2>⚾ MLB Live Scores</h2>
+      <select id="division-select">
+        <option value="NL West">NL West</option>
+        <option value="NL East">NL East</option>
+        <option value="NL Central">NL Central</option>
+        <option value="AL East">AL East</option>
+        <option value="AL Central">AL Central</option>
+        <option value="AL West">AL West</option>
+      </select>
+      <div class="output" id="mlb-output"></div>
+    </section>
+
+    <section class="grid-item" id="nba-api">
+      <h2>🏀 NBA Scores</h2>
+      <div class="output" id="nba-output"></div>
+    </section>
+
+    <section class="grid-item" id="bitcoin-api">
+      <h2>₿ Bitcoin Live Price</h2>
+      <div class="output" id="bitcoin-output">
+        <div class="btc-price-row">
+          <span id="btc-price">loading...</span>
+          <span id="btc-change"></span>
+        </div>
+        <canvas id="btc-chart"></canvas>
+      </div>
+    </section>
+
+    <section class="grid-item" id="translate-api">
+      <h2>🌐 Translate to Spanish</h2>
+      <input type="text" id="translate-input" placeholder="Enter English word or phrase" />
+      <button onclick="translateText()">Translate</button>
+      <div class="output" id="translate-output"></div>
+    </section>
+
+    <section class="grid-item" id="currency-api">
+      <h2>💱 USD Converter</h2>
+      <input type="number" id="currency-input" placeholder="Enter amount in USD..." value="1" />
+      <button onclick="fetchCurrency()">Convert</button>
+      <div class="output" id="currency-output"></div>
+    </section>
+
+    <section class="grid-item" id="weather-api">
+      <h2>🌤 Weather in Medellín</h2>
+      <div class="output" id="weather-output"></div>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
